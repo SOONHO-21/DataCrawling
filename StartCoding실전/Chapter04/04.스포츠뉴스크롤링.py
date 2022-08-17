@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import time
 
 keyword = input()
-response = requests.get("https://search.naver.com/search.naver?ie=UTF-8&sm=whl_sug&query=" + keyword)
+response = requests.get("https://search.naver.com/search.naver?ie=UTF-8&sm=whl_sug&query=" + keyWord)
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
 articles = soup.select("div.info_group") #뉴스기사 10개 추출
@@ -16,8 +16,18 @@ for article in articles:
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
         print(url)
+        #만약 스포츠뉴스 기사면
+        if "sports" in response.url:
+            title = soup.select_one("title")
+            content = soup.select_one("#newsEndContents")
+            divs = content.select("div")
+            for div in divs:
+                div.decompose()
+            paragraphs = content.select("p")
+            for p in paragraphs:
+                p.decompose()
         #만약 연예뉴스 기사면
-        if "entertain" in response.url:
+        elif "entertain" in response.url:
             title = soup.select_one("h4.title")
             content = soup.select_one("#articeBody")
         else:

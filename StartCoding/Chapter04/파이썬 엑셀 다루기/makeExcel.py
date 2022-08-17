@@ -14,4 +14,4 @@ ws['A2'] = 7
 ws['B2'] = '손흥민'
 
 #4) 엑셀 저장하기 r : \를 하나만 쓰도록 해줌
-wb.save(r'C:\DataCrawlingProjects\StartCoding\Chapter04\파이썬 엑셀 다루기\참가자_data.xlsx')
+wb.save(r"C:\DataCrawlingProjects\StartCoding\Chapter04\파이썬 엑셀 다루기\참가자_data.xlsx")

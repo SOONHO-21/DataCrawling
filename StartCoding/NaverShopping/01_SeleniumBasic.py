@@ -11,7 +11,7 @@ chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 # Deprecated warning 무시 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 # 브라우저 생성
-browser = webdriver.Chrome("c:/chromedriver.exe", options=chrome_options)
+browser = webdriver.Chrome("C:/chromedriver_win32/chromedriver.exe", options=chrome_options)
 
 #웹사이트 열기
 browser.get('https://www.naver.com/')

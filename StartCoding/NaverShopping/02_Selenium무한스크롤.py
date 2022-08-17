@@ -9,7 +9,7 @@ chrome_options = Options()
 chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"]) # 셀레니움 로그 무시
 warnings.filterwarnings("ignore", category=DeprecationWarning) # Deprecated warning 무시 
 
-browser = webdriver.Chrome("c:/chromedriver.exe", options = chrome_options)
+browser = webdriver.Chrome("C:/chromedriver_win32/chromedriver.exe", options = chrome_options)
 browser.get('https://www.naver.com')
 browser.implicitly_wait(2) #로딩이 끝날동안 2초 기다린다
 

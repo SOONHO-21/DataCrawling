@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup
 # "%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90") #%EC%82%BC%...부분 : 삼성전자
 keyWord = pyautogui.prompt("검색어를 입력하시오>>>")
 #f String 사용
-response = requests.get(f"https://search.naver.com/search.naver?where=news&sm="
-"tab_jum&query={keyWord}")
+response = requests.get(f"https://search.naver.com/search.naver?where=news&sm=tab_jum&query={keyWord}")
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
 links = soup.select(".news_tit") #결과는 list

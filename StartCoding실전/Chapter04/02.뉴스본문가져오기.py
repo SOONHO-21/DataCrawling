@@ -16,6 +16,6 @@ for article in articles:
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
         #print(soup)
-        content = soup.select_one("#articeBody")
+        content = soup.select_one("#dic_area")
         print(content.text)
         time.sleep(0.3)

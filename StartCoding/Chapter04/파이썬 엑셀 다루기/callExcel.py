@@ -1,6 +1,6 @@
 import openpyxl
 
-fpath = r'C:\DataCrawlingProjects\StartCoding\Chapter04\파이썬 엑셀 다루기\참가자_data.xlsx'
+fpath = r"C:\DataCrawlingProjects\StartCoding\Chapter04\파이썬 엑셀 다루기\참가자_data.xlsx"
 #1)엑셀 불러오기
 wb = openpyxl.load_workbook(fpath)
 
