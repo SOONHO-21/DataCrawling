@@ -35,7 +35,7 @@ for i in range(1, int(lastPage)*10, 10):
             url = links[1].attrs['href']    #두 번째 링크의 URL 추출
             response = requests.get(url, headers={'User-agent' : 'Mozila/5.0'})
             html = response.text
-            soup_sub = BeautifulSoup(html, 'html.parser')
+            soup_sub = BeautifulSoup(html, 'html.parser') #다른 soup에 html담기
             #만약 스포츠뉴스 기사면
             if "sports" in response.url:
                 title = soup_sub.select_one("title")
@@ -66,7 +66,7 @@ for i in range(1, int(lastPage)*10, 10):
     #마지막 페이지 여부 확인
     isLastPage = soup.select_one("a.btn_next").attrs['aria-disabled']
     if(isLastPage) == 'true':
-        print("마지막 페이지다.")
+        print("마지막 페이지입니다.")
         break
     pageNum = pageNum + 1
 wb.save(f"{keyWord}_result.xlsx")
